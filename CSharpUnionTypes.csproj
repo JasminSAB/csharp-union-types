@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net11.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- No LangVersion: C# 15 is the default for net11.0. -->
+  </PropertyGroup>
+
+  <!-- Build variants used by verify.ps1 to prove what the compiler does. -->
+  <PropertyGroup>
+    <!-- dotnet build -p:GiftCard=true    adds a fourth case to the union -->
+    <DefineConstants Condition="'$(GiftCard)' == 'true'">$(DefineConstants);GIFT_CARD</DefineConstants>
+    <!-- dotnet build -p:DiscardArm=true  gives the switch a discard arm -->
+    <DefineConstants Condition="'$(DiscardArm)' == 'true'">$(DefineConstants);DISCARD_ARM</DefineConstants>
+    <!-- dotnet build -p:WrongType=true   assigns a type that is not a case of the union -->
+    <DefineConstants Condition="'$(WrongType)' == 'true'">$(DefineConstants);WRONG_TYPE</DefineConstants>
+  </PropertyGroup>
+
+</Project>

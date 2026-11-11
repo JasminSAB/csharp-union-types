@@ -1,7 +1,7 @@
 # C# 15 Union Types, Checked on the .NET 11 SDK
 
 Source code for the dotnetleet.com post
-[C# Union Types: The Compiler Finally Checks Every Case](https://dotnetleet.com/Blogs/CSharpUnionTypes).
+[New in .NET 11: C# Union Types, the Compiler Finally Checks Every Case](https://dotnetleet.com/Blogs/CSharpUnionTypes).
 
 A console application that turns every claim of the post into a check that prints `PASS` or `FAIL`.
 The run-time claims live in `Program.cs`. The compile-time claims (a missing case, a discard arm, a
